@@ -119,12 +119,6 @@ pkill webfsd
 
 /etc/init.d/apache2 start
 
-cd featuredeploy
-# I think this can be removed?
-cat > ./github.pem <<- GithubKey
-{{GITHUB_INTEGRATION_KEY}}
-GithubKey
-
 MESSAGE="Ready to test: http://$FEATURE_DEPLOY_IP/ {{GITHASH}} {{BRANCH}}"
 curl -H "Content-Type: application/json" \
     -X POST \
