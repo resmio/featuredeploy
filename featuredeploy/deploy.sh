@@ -33,9 +33,8 @@ swapon /swapfile
 swapon -s
 
 cat > /root/self_destroy <<- SelfDestroy
-  (cd /root/app/featuredeploy
   curl --data '{"secret": "{{STATUS_SERVER_SECRET}}", "full_name": "{{STATUS_SERVER_FULL_NAME}}", "branch": "{{BRANCH}}", "installation_id": {{GITHUB_INSTALLATION_ID}}}' {{STATUS_SERVER_URL}}destroy -H "Content-Type: application/json"
-  curl -X DELETE -H 'Content-Type: application/json' -H 'Authorization: Bearer {{DIGITAL_OCEAN_TOKEN}}' 'https://api.digitalocean.com/v2/droplets/$(curl -s http://169.254.169.254/metadata/v1/id)')
+  curl -X DELETE -H 'Content-Type: application/json' -H 'Authorization: Bearer {{DIGITAL_OCEAN_TOKEN}}' 'https://api.digitalocean.com/v2/droplets/$(curl -s http://169.254.169.254/metadata/v1/id)'
 SelfDestroy
 
 cat /root/self_destroy | at "now + 2 days"
