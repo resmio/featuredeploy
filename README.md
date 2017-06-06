@@ -10,7 +10,7 @@ Waiting for ip address ...
 178.62.231.207
 ```
 
-To list deploy instances:
+To list deployed instances:
 ```
 $ featuredeploy ls
 50918708 | 188.166.76.183 | 5f590f20 | master                        | 06.06 12:38 | active
