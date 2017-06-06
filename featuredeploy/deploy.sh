@@ -7,7 +7,7 @@ set -e -x
 function onerror {
   curl --data "{\"full_name\": \"{{STATUS_SERVER_FULL_NAME}}\", \"branch\": \"{{BRANCH}}\", \"installation_id\": {{GITHUB_INSTALLATION_ID}}, \"ip\": \"$FEATURE_DEPLOY_IP\", \"hash\": \"{{GITHASH}}\", \"secret\": \"{{STATUS_SERVER_SECRET}}\"}" https://featuredeploy.herokuapp.com/error -H "Content-Type: application/json"
 }
-trap onerror EXIT
+trap onerror ERR
 
 apt-get -y update
 apt-get install -y webfs
