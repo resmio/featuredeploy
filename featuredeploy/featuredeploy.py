@@ -194,7 +194,7 @@ def remote_execute(ip, cmd, silent=False):
 
 
 def logs(ip):
-    remote_execute(ip, 'cd resmio && docker-compose logs --follow')
+    remote_execute(ip, 'cd app && docker-compose logs --follow')
 
 
 def ttl(ip, hours):
