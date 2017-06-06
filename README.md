@@ -47,14 +47,16 @@ Are optional environemnt variables that are exported for the startup script. Thi
 
 config.ini configuration
 ===
-DIGITAL_OCEAN_TOKEN The token of an digital ocean account to start the machine where the deployment happens.
-HIPCHAT_TOKEN an hipchat token to send a success message after deployment
-HIPCHAT_ROOM_ID = The room to post the hipchat message
-GITHUB_INSTALLATION_ID = TODO: ask steve
-STATUS_SERVER_SECRET = a secret shared with the status server
-STATUS_SERVER_URL the url of the status server
-STATUS_SERVER_FULL_NAME = TODO figure out
-PRIVATE_SSH_KEY
+| Config | Description |
+| --- | --- |
+|DIGITAL_OCEAN_TOKEN| The token of an digital ocean account to start the machine where the deployment happens.|
+|HIPCHAT_TOKEN| an hipchat token to send a success message after deployment|
+|HIPCHAT_ROOM_ID| = The room to post the hipchat message|
+|GITHUB_INSTALLATION_ID| = TODO: ask steve|
+|STATUS_SERVER_SECRET| = a secret shared with the status server|
+|STATUS_SERVER_URL| the url of the status server|
+|STATUS_SERVER_FULL_NAME| = TODO figure out|
+|PRIVATE_SSH_KEY|bla|
 
 
 The status server
