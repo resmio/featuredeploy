@@ -50,14 +50,16 @@ Are optional environemnt variables that are exported for the startup script. Thi
 | Key | Description |
 | --- | --- |
 |DIGITAL_OCEAN_TOKEN| The token of an digital ocean account to start the machine where the deployment happens.|
+|GITHUB_INSTALLATION_ID|TODO: ask steve|
+|GIT_CLONE| The app to clone|
+|HIPCHAT_ROOM_ID|The room to post the hipchat message|
 |HIPCHAT_TOKEN| an hipchat token to send a success message after deployment|
-|HIPCHAT_ROOM_ID| = The room to post the hipchat message|
-|GITHUB_INSTALLATION_ID| = TODO: ask steve|
-|STATUS_SERVER_SECRET| = a secret shared with the status server|
+|HTTP_AUTH_PASS| The password for the http authentification|
+|HTTP_AUTH_USER | the user for the http authentification|
+|PRIVATE_SSH_KEY| An private ssh key that you probably need for the git clone, see https://developer.github.com/v3/guides/managing-deploy-keys/|
+|STATUS_SERVER_FULL_NAME|TODO figure out|
+|STATUS_SERVER_SECRET|a secret shared with the status server|
 |STATUS_SERVER_URL| the url of the status server|
-|STATUS_SERVER_FULL_NAME| = TODO figure out|
-|PRIVATE_SSH_KEY|bla|
-|GITHUB_INTEGRATION_KEY|bla|
 
 
 The status server
