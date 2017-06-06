@@ -10,6 +10,8 @@ Waiting for ip address ...
 178.62.231.207
 ```
 
+The feature will be deployed to the given ip, until then the build process is monitored, HTTP basic authentification is used.
+
 To list deployed instances:
 ```
 $ featuredeploy ls
@@ -17,3 +19,8 @@ $ featuredeploy ls
 50924872 | 188.166.92.121 | 9db8968a | 5061-my-awesome-branch        | 06.06 13:50 | active
 50927969 | 178.62.214.231 | d80d3dff | 5064-my-not-so-awesome-branch | 06.06 14:23 | active
 ```
+You can also delete, schedule a delete and do other actions on deployed instances:
+```
+USAGE: featuredeploy (deploy | ls | rm $id | rmbranch $branch | rmall | ttl $ip $hours | logs $ip)
+```
+
