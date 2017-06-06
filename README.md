@@ -43,4 +43,20 @@ The `.featuredeploy/` folder consits of the following files:
 `.featuredeploy/environment.ini`
 Are optional environemnt variables that are exported for the startup script. This is an ad-hoc solution to maintain secret configurations, it's an vim encrypted file, make sure to use the `blowfish2` encryption method or newer if available.
 
+`.featuredeploy/config.ini` are configuration keys. See the next section for available options. It is also vim encrypted.
+
+config.ini configuration
+===
+DIGITAL_OCEAN_TOKEN The token of an digital ocean account to start the machine where the deployment happens.
+HIPCHAT_TOKEN an hipchat token to send a success message after deployment
+HIPCHAT_ROOM_ID = The room to post the hipchat message
+GITHUB_INSTALLATION_ID = TODO: ask steve
+STATUS_SERVER_SECRET = a secret shared with the status server
+STATUS_SERVER_URL the url of the status server
+STATUS_SERVER_FULL_NAME = TODO figure out
+PRIVATE_SSH_KEY
+
+
+The status server
+===
 
