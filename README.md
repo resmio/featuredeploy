@@ -28,7 +28,7 @@ An instance will be removed after a given time period or when its branch gets me
 
 Featuredeploys is application independent, application specific things like credentials or setting up the app is configured inside a `.featuredeploy` folder inside the project root of the application you wish to deploy.
 
-The `.featuredeploy` folder consits of the following files:
+The `.featuredeploy/` folder consits of the following files:
 ```
 .featuredeploy/
 ├── config.ini
