@@ -45,8 +45,8 @@ Are optional environemnt variables that are exported for the startup script. Thi
 
 `.featuredeploy/config.ini` are configuration keys. See the next section for available options. It is also vim encrypted.
 
-`config.ini` configurations
-===
+### `config.ini` configurations
+
 | Key | Description |
 | --- | --- |
 |DIGITAL_OCEAN_TOKEN| The token of an digital ocean account to start the machine where the deployment happens.|
@@ -62,6 +62,5 @@ Are optional environemnt variables that are exported for the startup script. Thi
 |STATUS_SERVER_URL| the url of the status server|
 
 
-The status server
-===
+### The status server
 
