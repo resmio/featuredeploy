@@ -41,6 +41,6 @@ The `.featuredeploy/` folder consits of the following files:
 `.featuredeploy/startup` is an executable file that has to start at port 8000, you get an ubuntu 16.04 but it is recommended to only rely on the docker and docker-compose installation to bring the app up.
 
 `.featuredeploy/environment.ini`
-Are optional environemnt variables that are exported for the startup script. This is an ad-hoc balbal
+Are optional environemnt variables that are exported for the startup script. This is an ad-hoc solution to maintain secret configurations, it's an vim encrypted file, make sure to use the `blowfish2` encryption method or newer if available.
 
 
