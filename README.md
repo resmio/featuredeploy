@@ -45,7 +45,7 @@ Are optional environemnt variables that are exported for the startup script. Thi
 
 `.featuredeploy/config.ini` are configuration keys. See the next section for available options. It is also vim encrypted.
 
-`.featuredeploy/config.ini` configuration
+`config.ini` configurations
 ===
 | Key | Description |
 | --- | --- |
@@ -57,6 +57,7 @@ Are optional environemnt variables that are exported for the startup script. Thi
 |STATUS_SERVER_URL| the url of the status server|
 |STATUS_SERVER_FULL_NAME| = TODO figure out|
 |PRIVATE_SSH_KEY|bla|
+|GITHUB_INTEGRATION_KEY|bla|
 
 
 The status server
