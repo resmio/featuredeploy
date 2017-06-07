@@ -14,7 +14,7 @@ Waiting for ip address ...
 
 The feature will be deployed to the printed ip, the build process can be monitored over HTTP, basic authentication is used.
 
-To list deployed instances:
+To list deployed instances run:
 ```
 $ featuredeploy ls
 50918708 | 188.166.76.183 | 5f590f20 | master                        | 06.06 12:38 | active
@@ -29,7 +29,7 @@ USAGE: featuredeploy (deploy | ls | rm $id | rmbranch $branch | rmall | ttl $ip 
 An instance will be removed after two days or when its branch gets merged.
 
 ### Configuration
-Featuredeploy is application independent, everything application specific like credentials is configured inside a `.featuredeploy` folder at your project root folder of the application you wish do deploy.
+Featuredeploy is application independent, everything application specific like credentials is configured inside a `.featuredeploy` folder at the project root folder of the application you wish do deploy.
 
 The `.featuredeploy/` folder consists of the following files:
 ```
@@ -42,7 +42,7 @@ The `.featuredeploy/` folder consists of the following files:
 `.featuredeploy/startup` is an executable file that has to start your app at port 8000, you get an ubuntu 16.04 but it is recommended to only rely on the docker and docker-compose installation to run the app. Probably you also want to create test data.
 
 `.featuredeploy/environment.ini`
-Are optional environment variables that are exported for the startup script. This is an ad-hoc solution to maintain secret configurations, it's an vim encrypted file make sure to use the `blowfish2` encryption method or newer if available.
+Are optional environment variables that are exported for the startup script. This is an ad-hoc solution to maintain secret configurations, it's an vim encrypted file make sure to use the `blowfish2` encryption method or newer if available. Also put the key in an `.encrypt_key` file or in the SECRET_KEY environemnt variable.
 
 `.featuredeploy/config.ini` are configuration keys, also vim encrypted. See the table for configuration options:
 
@@ -53,8 +53,8 @@ Are optional environment variables that are exported for the startup script. Thi
 |GIT_CLONE| The app to clone| Where to clone your app from. |
 |HIPCHAT_TOKEN| A hipchat token to send a success message after deployment.|
 |HIPCHAT_ROOM_ID|A Hipchat room to post a success message.|
-|HTTP_AUTH_PASS| The password for the http authentification.|
 |HTTP_AUTH_USER | the user for the http authentification.|
+|HTTP_AUTH_PASS| The password for the http authentification.|
 |PRIVATE_SSH_KEY| A private ssh key that you probably need for the git clone, see https://developer.github.com/v3/guides/managing-deploy-keys/ |
 |STATUS_SERVER_FULL_NAME| The github user- and repo name separated by a slash, e.g. docker/compose (Sombrero needs that) |
 |STATUS_SERVER_SECRET|a secret shared with the status server to authenticate http callbacks. |
