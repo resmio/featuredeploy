@@ -4,7 +4,7 @@
 ### Overview
 featuredeploy allows to deploy specific commits of an application for testing by e.g. QA
 
-To deploy the current commit of a branch run:
+To deploy the latest commit of the current branch run:
 ```
 $ featuredeploy deploy
 Deploying d8332a057cc09deebb6c4c7a1a35d576d8189866 "Adding file" (branch my-branch)
@@ -12,7 +12,7 @@ Waiting for ip address ...
 178.62.231.207
 ```
 
-The feature will be deployed to the given ip, until then the build process is monitored, HTTP basic authentification is used.
+The feature will be deployed to the printed ip, until then the build process can be monitored over HTTP, basic authentication is used.
 
 To list deployed instances:
 ```
@@ -29,9 +29,9 @@ USAGE: featuredeploy (deploy | ls | rm $id | rmbranch $branch | rmall | ttl $ip 
 An instance will be removed after a given time period or when its branch gets merged.
 
 ### Configuration
-Featuredeploys is application independent, application specific things like credentials or setting up the app is configured inside a `.featuredeploy` folder inside the project root of the application you wish to deploy.
+Featuredeploy is application independent, everything application specific like credentials is configured inside a `.featuredeploy` folder at your project root folder of the application you wish do deploy.
 
-The `.featuredeploy/` folder consits of the following files:
+The `.featuredeploy/` folder consists of the following files:
 ```
 .featuredeploy/
 ├── config.ini
@@ -41,12 +41,12 @@ The `.featuredeploy/` folder consits of the following files:
 0 directories, 3 files
 ```
 
-`.featuredeploy/startup` is an executable file that has to start at port 8000, you get an ubuntu 16.04 but it is recommended to only rely on the docker and docker-compose installation to bring the app up.
+`.featuredeploy/startup` is an executable file that has to start your app at port 8000, you get an ubuntu 16.04 but it is recommended to only rely on the docker and docker-compose installation to bring the app up.
 
 `.featuredeploy/environment.ini`
-Are optional environemnt variables that are exported for the startup script. This is an ad-hoc solution to maintain secret configurations, it's an vim encrypted file, make sure to use the `blowfish2` encryption method or newer if available.
+Are optional environment variables that are exported for the startup script. This is an ad-hoc solution to maintain secret configurations, it's an vim encrypted file, make sure to use the `blowfish2` encryption method or newer if available.
 
-`.featuredeploy/config.ini` are configuration keys. See the next section for available options. It is also vim encrypted.
+`.featuredeploy/config.ini` are configuration keys, also vim encrypted. See the table for all configuration options:
 
 | Key | Description |
 | --- | --- |
