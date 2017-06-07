@@ -48,17 +48,17 @@ Are optional environment variables that are exported for the startup script. Thi
 
 | Key | Description |
 | --- | --- |
-|DIGITAL_OCEAN_TOKEN| The token of an digital ocean account to start the machine where the deployment happens.|
-|GITHUB_INSTALLATION_ID|TODO: ask steve|
-|GIT_CLONE| The app to clone|
-|HIPCHAT_ROOM_ID|The room to post the hipchat message|
-|HIPCHAT_TOKEN| an hipchat token to send a success message after deployment|
-|HTTP_AUTH_PASS| The password for the http authentification|
-|HTTP_AUTH_USER | the user for the http authentification|
-|PRIVATE_SSH_KEY| An private ssh key that you probably need for the git clone, see https://developer.github.com/v3/guides/managing-deploy-keys/|
-|STATUS_SERVER_FULL_NAME|TODO figure out|
-|STATUS_SERVER_SECRET|a secret shared with the status server|
-|STATUS_SERVER_URL| the url of the status server|
+|DIGITAL_OCEAN_TOKEN| The token of a digital ocean account to start the machine where the deployment happens.|
+|GITHUB_INSTALLATION_ID| A Github installation id for sombrero. |
+|GIT_CLONE| The app to clone| Where to clone your app from. |
+|HIPCHAT_TOKEN| A hipchat token to send a success message after deployment.|
+|HIPCHAT_ROOM_ID|A Hipchat room to post a success message.|
+|HTTP_AUTH_PASS| The password for the http authentification.|
+|HTTP_AUTH_USER | the user for the http authentification.|
+|PRIVATE_SSH_KEY| A private ssh key that you probably need for the git clone, see https://developer.github.com/v3/guides/managing-deploy-keys/ |
+|STATUS_SERVER_FULL_NAME| The github user- and repo name separated by a slash, e.g. docker/compose (Sombrero needs that) |
+|STATUS_SERVER_SECRET|a secret shared with the status server to authenticate http callbacks. |
+|STATUS_SERVER_URL| the url of the status server ending with a trailing slash. |
 
 
 ### The Sombrero status server
