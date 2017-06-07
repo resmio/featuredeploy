@@ -75,5 +75,5 @@ For a better overview of how sombrero plays with the featuredeploy CLI you can  
 
 ### Misc
 Featuredeploy is used regularly at resmio and designed as a general purpose application, nevertheless the [rule of three applies](https://blog.codinghorror.com/rule-of-three/).
-Meaning that it fits very well the needs of the company it was designed for but may need adaptations to work for you. Also note that the code did not get more dedication than it needs for its purpose.
+Meaning that it fits very well the needs of the company it was designed for but may need adaptations to work for you. Also note that the code did not get more dedication than it needs to fulfill its purpose.
 
