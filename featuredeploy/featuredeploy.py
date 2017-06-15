@@ -10,8 +10,8 @@ import pytz
 
 from readconfig import read_config, read_environemnt, read_startup
 
-USAGE = ('USAGE: featuredeploy (deploy | ls | rm $id | rmbranch $branch | '
-         'rmall | ttl $ip $hours | logs $ip)')
+USAGE = ('USAGE: featuredeploy deploy [$branch [$commit]] | ls | rm $id | '
+         'rmbranch $branch | rmall | ttl $ip $hours | logs $ip)'
 NAME_PREFIX = 'resmioapp--'
 
 
