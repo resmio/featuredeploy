@@ -57,7 +57,7 @@ def create_droplet(branch, githash):
                                    name='{}{}--{}'.format(
                                        NAME_PREFIX, githash, branch),
                                    region='ams3',
-                                   image='docker',
+                                   image='docker-18-04',
                                    size_slug='2gb',
                                    user_data=user_data,
                                    ssh_keys=keys,  # Automatic conversion
