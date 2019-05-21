@@ -118,7 +118,7 @@ def deploy(branch=None, githash=None):
             ['git', 'log', '--format=%B', '-n', '1', githash])
         commitmsg = commitmsg.rstrip('\n')
 
-        print('Deploying {} "{}" (branch {})'.format(githash, commitmsg, branch)
+        print('Deploying {} "{}" (branch {})'.format(githash, commitmsg, branch))
     else:
         print('Deploying {} (branch {})'.format(githash, branch))
 
