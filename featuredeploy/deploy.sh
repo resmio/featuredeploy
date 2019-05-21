@@ -43,14 +43,13 @@ cat /root/self_destroy | at "now + 2 days"
 curl -sSL https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
-# install python because it isn't installed by default
-apt-get install -y python
+apt-get install -y python3
 
-curl -sS https://bootstrap.pypa.io/get-pip.py | python - "pip==8.1.2"
+curl -sS https://bootstrap.pypa.io/get-pip.py | python3 - "pip==9.0.3"
 update-rc.d -f  apache2 remove # makes and install of apache not start it
 sudo apt-get install -y apache2
 sudo apt-get install -y build-essential
-sudo apt-get install -y python-dev
+sudo apt-get install -y python3-dev
 
 # checkout the project
 cat > ~/.ssh/id_rsa <<- MyPrivateKey
