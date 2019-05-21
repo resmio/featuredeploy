@@ -25,7 +25,11 @@ def get_manager():
 
 
 def expand_config_vars(stri, extra):
-    for key, value in config.items() + extra.items():
+    for key, value in config.items():
+        if key.isupper():
+            stri = stri.replace('{{' + key + '}}', value)
+            
+    for key, value in extra.items():
         if key.isupper():
             stri = stri.replace('{{' + key + '}}', value)
     return stri
