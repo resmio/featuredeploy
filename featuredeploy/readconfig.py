@@ -1,6 +1,6 @@
 import os
 from configparser import ConfigParser
-from io import StringIO
+from io import BytesIO
 
 from .vimdecrypt import decryptfile
 
@@ -24,7 +24,7 @@ def vim_decrypt_file(fname, password):
     with open(fname, 'rb') as fp:
         args = type('Args', (), {'verbose': False})
         text = decryptfile(fp.read(), password, args)
-        return StringIO(text)
+        return BytesIO(text)
 
 
 def get_encrypt_key():
