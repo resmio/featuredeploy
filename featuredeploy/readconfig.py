@@ -1,6 +1,6 @@
 import os
 from configparser import ConfigParser
-from cStringIO import StringIO
+from io import StringIO
 
 from vimdecrypt import decryptfile
 
