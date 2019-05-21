@@ -152,13 +152,13 @@ def rm(id):
         print('Graceful remove failed, removing hard')
         try:
             assert droplet.destroy()
-        except Exception, exc:
-            if 'droplet is still being created' in exc.message:
+        except Exception as e:
+            if 'droplet is still being created' in str(e):
                 sleep(5)
                 print('Waiting on {}'.format(id))
                 rm(id)
             else:
-                raise exc
+                raise e
         print('Removed hard')
     else:
         print('Graceful remove succeded')
