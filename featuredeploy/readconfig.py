@@ -2,7 +2,7 @@ import os
 from configparser import ConfigParser
 from io import StringIO
 
-from vimdecrypt import decryptfile
+from .vimdecrypt import decryptfile
 
 config_file = os.path.join(
     os.getcwd(),
