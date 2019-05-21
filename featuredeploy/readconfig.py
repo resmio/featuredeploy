@@ -24,7 +24,7 @@ def vim_decrypt_file(fname, password):
     with open(fname, 'rb') as fp:
         args = type('Args', (), {'verbose': False})
         text = decryptfile(fp.read(), password, args)
-        return BytesIO(text)
+        return BytesIO(text).read().decode('UTF-8')
 
 
 def get_encrypt_key():
