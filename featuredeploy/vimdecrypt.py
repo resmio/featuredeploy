@@ -13,7 +13,6 @@ Or from the commandline using: 'vim -x yourfile.txt'
 This tool can decrypt files saved by vim, without using vim.
 
 """
-from __future__ import division, print_function
 
 import codecs
 import struct

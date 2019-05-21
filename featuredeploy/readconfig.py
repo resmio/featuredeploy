@@ -41,7 +41,8 @@ def read_encrypted_config(config_file):
     conf = ConfigParser()
     conf.optionxform = str
     encrypt_key = get_encrypt_key()
-    conf.readfp(vim_decrypt_file(config_file, encrypt_key))
+    string = vim_decrypt_file(config_file, encrypt_key)
+    conf.read_string(string)
     return dict(conf.items('main'))
 
 
