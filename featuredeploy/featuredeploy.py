@@ -97,7 +97,7 @@ def list_servers():
         longest_branch = max(len(s['branch']) for s in servers)
         longest_ip = max(len(s.get('ip') or '') for s in servers)
         for s in servers:
-            print ('{id} | {ip: <%s} | {githash} | {branch: <%s} | '
+            print('{id} | {ip: <%s} | {githash} | {branch: <%s} | '
                    '{pretty_created} | {droplet_status}'
                    % (longest_ip, longest_branch)
                    ).format(**s)
@@ -118,10 +118,9 @@ def deploy(branch=None, githash=None):
             ['git', 'log', '--format=%B', '-n', '1', githash])
         commitmsg = commitmsg.rstrip('\n')
 
-        print 'Deploying {} "{}" (branch {})'.format(
-            githash, commitmsg, branch)
+        print('Deploying {} "{}" (branch {})'.format(githash, commitmsg, branch)
     else:
-        print 'Deploying {} (branch {})'.format(githash, branch)
+        print('Deploying {} (branch {})'.format(githash, branch))
 
     githash = githash[:8]
 
@@ -130,18 +129,18 @@ def deploy(branch=None, githash=None):
 
     new_droplet = create_droplet(branch, githash)
 
-    print 'Waiting for ip address ...'
+    print('Waiting for ip address ...')
     while True:
         servers = dict((s['id'], s['ip']) for s in get_servers())
         ip = servers[new_droplet.id]
         if ip:
-            print ip
+            print(ip)
             return
         sleep(1)
 
 
 def rm(id):
-    print 'Removing instance {} ...'.format(id)
+    print('Removing instance {} ...'.format(id))
     droplet = get_manager().get_droplet(id)
     ip = droplet.ip_address
 
@@ -150,19 +149,19 @@ def rm(id):
         exit_code = remote_execute(ip, 'sh -e /root/self_destroy', silent=True)
 
     if exit_code is not None and exit_code:
-        print 'Graceful remove failed, removing hard'
+        print('Graceful remove failed, removing hard')
         try:
             assert droplet.destroy()
         except Exception, exc:
             if 'droplet is still being created' in exc.message:
                 sleep(5)
-                print 'Waiting on {}'.format(id)
+                print('Waiting on {}'.format(id))
                 rm(id)
             else:
                 raise exc
-        print 'Removed hard'
+        print('Removed hard')
     else:
-        print 'Graceful remove succeded'
+        print('Graceful remove succeded')
 
 
 def rmbranch(branch):
@@ -179,7 +178,7 @@ def rmall():
 
 def remote_execute(ip, cmd, silent=False):
     if not silent:
-        print 'Executing: ' + cmd
+        print('Executing: ' + cmd)
         extra = {}
     else:
         devnull = open(os.devnull, 'w')
@@ -199,7 +198,7 @@ def logs(ip):
 
 def ttl(ip, hours):
     if not hours.isdigit():
-        print 'hours (2nd arg) should be a number'
+        print('hours (2nd arg) should be a number')
         sys.exit(1)
 
     # dummy job, so we always have some
@@ -211,15 +210,15 @@ def ttl(ip, hours):
     # at our destroy job with new schedule
     remote_execute(ip, "cat /root/self_destroy | at 'now + %s hours'" % hours)
 
-    print
-    print '{} will self destroy in {} hours'.format(ip, hours)
+    print()
+    print('{} will self destroy in {} hours'.format(ip, hours))
 
 
 def getarg():
     try:
         return sys.argv[2]
     except IndexError:
-        print 'Argument missing'
+        print('Argument missing')
         sys.exit(1)
 
 
@@ -227,7 +226,7 @@ def gettwoargs():
     try:
         return sys.argv[2], sys.argv[3]
     except IndexError:
-        print 'Needs two arguments'
+        print('Needs two arguments')
         sys.exit(1)
 
 
@@ -245,7 +244,7 @@ def main():
     try:
         cmd = sys.argv[1]
     except IndexError:
-        print USAGE
+        print(USAGE)
         sys.exit(1)
     if cmd in ('ls', 'list', 'ps'):
         list_servers()
@@ -262,9 +261,9 @@ def main():
     elif cmd == 'ttl':
         ttl(*gettwoargs())
     elif cmd == 'help' or cmd == '--help':
-        print USAGE
+        print(USAGE)
     else:
-        print USAGE
+        print(USAGE)
         sys.exit(1)
 
 
