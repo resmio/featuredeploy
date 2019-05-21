@@ -8,7 +8,7 @@ from uuid import uuid4
 import digitalocean
 import pytz
 
-from readconfig import read_config, read_environemnt, read_startup
+from .readconfig import read_config, read_environemnt, read_startup
 
 USAGE = ('USAGE: featuredeploy deploy [$branch [$commit]] | ls | rm $id | '
          'rmbranch $branch | rmall | ttl $ip $hours | logs $ip)')
