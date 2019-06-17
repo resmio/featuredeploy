@@ -59,7 +59,7 @@ def create_droplet(branch, githash):
     droplet = digitalocean.Droplet(token=config['DIGITAL_OCEAN_TOKEN'],
                                    name='{}{}--{}'.format(
                                        NAME_PREFIX, githash, branch),
-                                   region='ams3',
+                                   region='fra1',
                                    image='docker-18-04',
                                    size_slug='2gb',
                                    user_data=user_data,
