@@ -28,7 +28,6 @@ def expand_config_vars(stri, extra):
     for key, value in config.items():
         if key.isupper():
             stri = stri.replace('{{' + key + '}}', value)
-
     for key, value in extra.items():
         if key.isupper():
             stri = stri.replace('{{' + key + '}}', value)
@@ -113,13 +112,16 @@ def deploy(branch=None, githash=None):
         # get information on the current commit and branch
         branch = subprocess.check_output(
             'git rev-parse --symbolic-full-name --abbrev-ref HEAD'.split())
+        branch = branch.decode()
         branch = branch.rstrip('\n')
 
     if githash is None:
         githash = subprocess.check_output('git rev-parse HEAD'.split())
+        githash = githash.decode()
         githash = githash.rstrip('\n')
         commitmsg = subprocess.check_output(
             ['git', 'log', '--format=%B', '-n', '1', githash])
+        commitmsg = commitmsg.decode()
         commitmsg = commitmsg.rstrip('\n')
 
         print('Deploying {} "{}" (branch {})'.format(githash, commitmsg, branch))
