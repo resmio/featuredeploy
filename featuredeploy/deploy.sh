@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 mkdir /root/serve
 exec > /root/serve/logs.txt 2>&1 # log all output to that file
 set -e -x
