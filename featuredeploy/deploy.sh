@@ -122,10 +122,4 @@ pkill webfsd
 
 /etc/init.d/apache2 start
 
-MESSAGE="Ready to test: http://$FEATURE_DEPLOY_IP/ {{GITHASH}} {{BRANCH}}"
-curl -H "Content-Type: application/json" \
-    -X POST \
-    -d "{\"color\": \"purple\", \"message_format\": \"text\", \"message\": \"$MESSAGE\" }" \
-    https://api.hipchat.com/v2/room/{{HIPCHAT_ROOM_ID}}/notification?auth_token={{HIPCHAT_TOKEN}}
-
 curl --data "{\"secret\": \"{{STATUS_SERVER_SECRET}}\", \"full_name\": \"{{STATUS_SERVER_FULL_NAME}}\", \"branch\": \"{{BRANCH}}\", \"installation_id\": {{GITHUB_INSTALLATION_ID}}, \"ip\": \"$FEATURE_DEPLOY_IP\", \"hash\": \"{{GITHASH}}\"}" {{STATUS_SERVER_URL}}deployed -H "Content-Type: application/json"
