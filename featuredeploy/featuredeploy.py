@@ -138,10 +138,13 @@ def deploy(branch=None, githash=None):
     print('Waiting for ip address ...')
     while True:
         servers = dict((s['id'], s['ip']) for s in get_servers())
-        ip = servers[new_droplet.id]
-        if ip:
-            print(ip)
-            return
+        try:
+            ip = servers[new_droplet.id]
+            if ip:
+                print(ip)
+                return
+        except KeyError:
+            pass
         sleep(1)
 
 
