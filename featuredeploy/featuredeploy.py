@@ -100,10 +100,10 @@ def list_servers():
         longest_branch = max(len(s['branch']) for s in servers)
         longest_ip = max(len(s.get('ip') or '') for s in servers)
         for s in servers:
-            print('{id} | {ip: <%s} | {githash} | {branch: <%s} | '
+            print(('{id} | {ip: <%s} | {githash} | {branch: <%s} | '
                    '{pretty_created} | {droplet_status}'
                    % (longest_ip, longest_branch)
-                   ).format(**s)
+                   ).format(**s))
 
 
 def deploy(branch=None, githash=None):
