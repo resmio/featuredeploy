@@ -12,7 +12,7 @@ function onerror {
 trap onerror ERR
 
 apt-get -y update
-apt-get install -y webfs
+apt-get install -y webfs at
 /etc/init.d/webfs stop # gets started right after install
 pkill webfsd || true
 
