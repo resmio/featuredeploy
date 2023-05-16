@@ -21,7 +21,7 @@ ufw allow 80
 webfsd -p 80 -f logs.txt -b {{HTTP_AUTH_USER}}:{{HTTP_AUTH_PASS}}
 cd /root
 
-echo: "test message!"
+echo "Prepare startup script"
 
 cat > ~/startup <<- 'UniqueText550e8400e29b11d4a716446655440000'
 {{STARTUP}}
