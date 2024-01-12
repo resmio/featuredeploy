@@ -9,7 +9,7 @@ setup(name='featuredeploy',
       packages=['featuredeploy'],
       scripts=['featuredeploy/featuredeploy'],
       package_data={
-                'featuredeploy': ['deploy.sh'],
+          'featuredeploy': ['deploy.sh'],
       },
       install_requires=[
           'pytz>=2016.7',
