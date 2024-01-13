@@ -14,6 +14,6 @@ setup(name='featuredeploy',
       install_requires=[
           'pytz>=2016.7',
           'python-digitalocean==1.9.0',
-          'pycryptodome==3.14.1'
+          'pycryptodome==3.19.1'
       ],
       zip_safe=False)
