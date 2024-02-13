@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='featuredeploy',
-      version='1.0.6',
+      version='1.1.6',
       description='Test single features',
       url='http://github.com/resmio/resmio/featuredeploy',
       author='Resmio Team',
@@ -13,7 +13,6 @@ setup(name='featuredeploy',
       },
       install_requires=[
           'pytz>=2016.7',
-          'python-digitalocean==1.9.0',
-          'pycryptodome==3.14.1'
+          'python-digitalocean~=1.9.0',
       ],
       zip_safe=False)

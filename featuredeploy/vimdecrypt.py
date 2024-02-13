@@ -13,15 +13,12 @@ Or from the commandline using: 'vim -x yourfile.txt'
 This tool can decrypt files saved by vim, without using vim.
 
 """
-
-import codecs
+import hashlib
 import struct
 import sys
 import time
 import zlib
 from binascii import a2b_hex, b2a_hex
-
-from Crypto.Hash import SHA256
 
 
 def SaveAsZip(zipname, filename, filedata):
@@ -93,8 +90,7 @@ def wordswap(data):
 
 
 def sha256(data, salt):
-    """ Return sha256 digest of data + salt """
-    h = SHA256.new()
+    h = hashlib.sha256()
     h.update(data)
     h.update(salt)
     return h.digest()
