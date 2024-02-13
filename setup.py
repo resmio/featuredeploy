@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='featuredeploy',
-      version='1.1.6',
+      version='1.0.7',
       description='Test single features',
       url='https://github.com/resmio/featuredeploy',
       author='Resmio Team',
