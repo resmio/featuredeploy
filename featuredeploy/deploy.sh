@@ -23,11 +23,6 @@ cd /root
 
 echo "Prepare startup script"
 
-cat > ~/startup <<- 'UniqueText550e8400e29b11d4a716446655440000'
-{{STARTUP}}
-UniqueText550e8400e29b11d4a716446655440000
-chmod 744 ~/startup
-
 FEATURE_DEPLOY_IP=$(curl http://169.254.169.254/metadata/v1/interfaces/public/0/ipv4/address)
 export FEATURE_DEPLOY_IP
 
@@ -63,6 +58,8 @@ rm ~/.ssh/id_rsa
 cd app
 git checkout {{GITHASH}}
 
+cp .featuredeploy/startup ~/startup
+chmod 744 ~/startup
 
 :
 :
