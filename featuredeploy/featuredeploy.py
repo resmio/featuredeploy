@@ -61,7 +61,7 @@ def create_droplet(branch, githash):
                                        NAME_PREFIX, githash, branch),
                                    region='fra1',
                                    image='docker-20-04',
-                                   size_slug='s-2vcpu-4gb',
+                                   size_slug='s-4vcpu-8gb',
                                    user_data=user_data,
                                    ssh_keys=keys,  # Automatic conversion
                                    backups=False)
